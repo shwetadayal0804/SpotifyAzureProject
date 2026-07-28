@@ -133,6 +133,8 @@
 			{
 				"name": "updateLastCDC",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "max_cdc",
