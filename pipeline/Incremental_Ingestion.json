@@ -135,14 +135,7 @@
 				"type": "Copy",
 				"state": "Inactive",
 				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "max_cdc",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -234,7 +227,7 @@
 						{
 							"type": "Query",
 							"text": {
-								"value": "@SELECT MAX(@{pipeline().parameters.cdc_col}) AS cdc FROM @{pipeline().parameters.schema}.@{pipeline().parameters.table}",
+								"value": "SELECT MAX(@{pipeline().parameters.cdc_col}) AS cdc FROM @{pipeline().parameters.schema}.@{pipeline().parameters.table}",
 								"type": "Expression"
 							}
 						}
