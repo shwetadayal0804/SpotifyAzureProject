@@ -1,6 +1,10 @@
 {
 	"name": "ds_Json_dynamic",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLake",
+			"type": "LinkedServiceReference"
+		},
 		"parameters": {
 			"container": {
 				"type": "string"
@@ -14,6 +18,23 @@
 		},
 		"annotations": [],
 		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
+			}
+		},
 		"schema": {}
 	}
 }
