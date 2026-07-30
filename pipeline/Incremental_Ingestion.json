@@ -110,7 +110,7 @@
 						"parameters": {
 							"container": "bronze",
 							"folder": {
-								"value": "@pipeline().parameters.cdc_folder",
+								"value": "@{pipeline().parameters.table}_cdc",
 								"type": "Expression"
 							},
 							"file": "cdc.json"
@@ -250,7 +250,7 @@
 									"parameters": {
 										"container": "bronze",
 										"folder": {
-											"value": "@pipeline().parameters.cdc_folder",
+											"value": "@{pipeline().parameters.table}_cdc",
 											"type": "Expression"
 										},
 										"file": "empty.json"
@@ -316,9 +316,6 @@
 				"type": "string"
 			},
 			"from_date": {
-				"type": "string"
-			},
-			"cdc_folder": {
 				"type": "string"
 			}
 		},
