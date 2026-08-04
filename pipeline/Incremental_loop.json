@@ -326,7 +326,7 @@
 						"activity": "ForEachIncremental_loop",
 						"dependencyConditions": [
 							"Failed",
-							"Skipped"
+							"Succeeded"
 						]
 					}
 				],
